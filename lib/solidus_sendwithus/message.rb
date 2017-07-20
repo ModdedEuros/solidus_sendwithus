@@ -4,7 +4,7 @@ module Spree
   module SendWithUs
     class Message
       attr_reader :to, :from, :email_id, :email_data, :cc, :bcc, :files,
-        :esp_account, :tags, :locale, :version_name
+                  :esp_account, :tags, :locale, :version_name
 
       def initialize
         @email_data = {}
@@ -56,7 +56,7 @@ module Spree
         end
       end
 
-      def deliver
+      def mail_sendwithus(&args)
         ::SendWithUs::Api.new.send_email(
           @email_id,
           @to,
@@ -72,6 +72,31 @@ module Spree
             version_name: @version_name
           }
         )
+      end
+
+      alias_method :deliver_later!, :mail_sendwithus
+      alias_method :deliver_later,  :mail_sendwithus
+      alias_method :deliver_now!,   :mail_sendwithus
+      alias_method :deliver_now,    :mail_sendwithus
+
+      def deliver! #:nodoc:
+        ActiveSupport::Deprecation.warn(<<-MSG.squish)
+          `#deliver!` is deprecated and will be removed in Rails 5. Use
+          `#deliver_now!` to deliver immediately or `#deliver_later!` to
+          deliver through Active Job.
+        MSG
+
+        deliver_now!
+      end
+
+      def deliver #:nodoc:
+        ActiveSupport::Deprecation.warn(<<-MSG.squish)
+          `#deliver` is deprecated and will be removed in Rails 5. Use
+          `#deliver_now` to deliver immediately or `#deliver_later` to
+          deliver through Active Job.
+        MSG
+
+        deliver_now
       end
     end
   end
