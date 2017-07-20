@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-byebug'
-end
+branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
+gem "solidus", github: "solidusio/solidus", branch: branch
+
+gem 'pg'
+gem 'mysql2'
 
 gemspec

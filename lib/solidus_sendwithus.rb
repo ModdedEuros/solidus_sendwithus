@@ -1,9 +1,9 @@
 require 'send_with_us'
 
 require 'spree_core'
-require 'spree_sendwithus/mailer'
-require 'spree_sendwithus/message'
-require 'spree_sendwithus/engine'
+require 'solidus_sendwithus/mailer'
+require 'solidus_sendwithus/message'
+require 'solidus_sendwithus/engine'
 
 module Spree
   module SendWithUs
