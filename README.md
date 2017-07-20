@@ -1,11 +1,9 @@
 Spree SendWithUs
 ================
 
-SendWithUs mailer you can use in Spree! Say what?!
+SendWithUs mailer you can use in Solidus! Say what?!
 
-[![Code Climate](https://codeclimate.com/github/freerunningtech/spree_sendwithus/badges/gpa.svg)](https://codeclimate.com/github/freerunningtech/spree_sendwithus)
-[![Test Coverage](https://codeclimate.com/github/freerunningtech/spree_sendwithus/badges/coverage.svg)](https://codeclimate.com/github/freerunningtech/spree_sendwithus)
-[![Gem Version](https://badge.fury.io/rb/spree_sendwithus.svg)](http://badge.fury.io/rb/spree_sendwithus)
+[![Build Status](https://travis-ci.org/nebulab/solidus_sendwithus.svg?branch=master)](https://travis-ci.org/nebulab/solidus_sendwithus)
 
 Installation
 ------------
@@ -45,9 +43,9 @@ Now you can configure any of your mailers to use SendWithUs by making them a sub
 
 class Spree::QualityControlMailer < Spree::SendWithUsMailer::Base
   default recipient_name: "Quality Control",
-          recipient_address: "quality@freerunningtech.com",
+          recipient_address: "quality@solidus.com",
           from_name: "Quality Control",
-          from_address: "quality@freerunningtech.com"
+          from_address: "quality@solidus.com"
 
   def reprint(original, reprint)
     assign(:original, order_data(Spree::Order.find(original)))
