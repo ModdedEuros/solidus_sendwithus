@@ -1,7 +1,7 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_sendwithus'
+  s.name        = 'solidus_sendwithus'
   s.version     = '2.2.0'
   s.summary     = 'SendWithUs integration'
   s.license     = 'BSD-3'

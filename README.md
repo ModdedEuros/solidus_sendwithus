@@ -10,13 +10,13 @@ SendWithUs mailer you can use in Spree! Say what?!
 Installation
 ------------
 
-Add spree_sendwithus to your Gemfile:
+Add solidus_sendwithus to your Gemfile:
 ```ruby
 # Rubygems
-gem 'spree_sendwithus'
+gem 'solidus_sendwithus'
 
 # Direct from Github
-gem 'spree_sendwithus', github: 'freerunningtech/spree_sendwithus'
+gem 'solidus_sendwithus', github: 'nebulab/solidus_sendwithus'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -82,9 +82,9 @@ Also, the default URL host will be pulled from `config.action_mailer.default_url
 
 RSpec
 -----
-Have spree_sendwithus mailers? Want to do some testing with RSpec? Don't want to hit the API?! Then look no further! Just add the following to your `spec_helper.rb` and bask in the glory that is mocking!
+Have solidus_sendwithus mailers? Want to do some testing with RSpec? Don't want to hit the API?! Then look no further! Just add the following to your `spec_helper.rb` and bask in the glory that is mocking!
 ```ruby
-require 'spree_sendwithus/rspec_support'
+require 'solidus_sendwithus/rspec_support'
 ```
 
 Testing
