@@ -16,11 +16,12 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_dependency 'solidus_core', '~> 1.4'
+  solidus_version = [">= 1.0", "< 3"]
+
+  s.add_dependency 'solidus_core', solidus_version
   s.add_dependency 'send_with_us', '~> 1.9'
 
-  s.add_development_dependency 'rake', '< 11.0'
-  s.add_development_dependency 'rspec-rails', '~> 3.0.0'
+  s.add_development_dependency 'rspec-rails', '~> 3.1'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'test-unit'
