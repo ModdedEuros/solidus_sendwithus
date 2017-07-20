@@ -3,7 +3,18 @@ require 'solidus_sendwithus'
 describe Spree::SendWithUs::Message do
   subject { Spree::SendWithUs::Message.new }
 
-  it { is_expected.to respond_to(:email_id, :to, :from, :cc, :bcc, :deliver) }
+  it do
+    is_expected.to respond_to(:email_id,
+                              :to,
+                              :from,
+                              :cc,
+                              :bcc,
+                              :deliver,
+                              :deliver_now,
+                              :deliver_now!,
+                              :deliver_later,
+                              :deliver_later)
+  end
   it { is_expected.not_to respond_to(:email_id=, :to=, :from=, :cc=, :bcc=) }
 
   describe "initialization" do
@@ -107,14 +118,14 @@ describe Spree::SendWithUs::Message do
     end
   end
 
-  describe "#deliver" do
+  describe "#deliver_now" do
     let(:api_double) { double("api") }
 
     it "calls the send_with_us gem" do
       allow(SendWithUs::Api).to receive(:new).and_return(api_double)
       expect(api_double).to receive(:send_email)
 
-      subject.deliver
+      subject.deliver_now
     end
   end
 end
