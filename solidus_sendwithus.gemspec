@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = 'Stembolt Technologies'
-  s.email     = 'contact@stembolt.com'
-  s.homepage  = 'https://www.stembolt.com'
+  s.author    = 'Stembolt Technologies, Nebulab'
+  s.email     = 'info@nebulab.it'
+  s.homepage  = 'https://github.com/nebulab/solidus_sendwithus'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
